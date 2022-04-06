@@ -1,14 +1,20 @@
-require('dotenv').config;
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios')
+require('dotenv').config();
 const { Sequelize } = require('sequelize')
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/nuclea`, {
-    logging: false
+    logging: false,
+    native: false
 });
+//const sequelize = new Sequelize(`postgres://postgres:258563@localhost:5432/nuclea`, {
+//    logging: false,
+//    native: false
+//});
+
 
 const basename = path.basename(__filename);
 
