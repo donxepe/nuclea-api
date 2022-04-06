@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios')
 require('dotenv').config();
 const { Sequelize } = require('sequelize')
 
@@ -10,11 +9,6 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
     logging: false,
     native: false
 });
-//const sequelize = new Sequelize(`postgres://postgres:258563@localhost:5432/nuclea`, {
-//    logging: false,
-//    native: false
-//});
-
 
 const basename = path.basename(__filename);
 
@@ -36,7 +30,10 @@ let capsEntries = entries.map((entry) =>
 sequelize.models = Object.fromEntries(capsEntries);
 
 // Declare relationships
+const { Quote, Author } = sequelize.models;
 
+Author.hasMany(Quote)
+Quote.belongsTo(Author)
 
 
 module.exports = {

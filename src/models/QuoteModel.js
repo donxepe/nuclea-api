@@ -2,10 +2,6 @@ const { DataTypes } = require('sequelize')
 
 module.exports = (sequelize) => {
     sequelize.define('quote', {
-        author : {
-            type: DataTypes.STRING,
-            allowNull:false,
-        },
         quote : {
             type: DataTypes.TEXT,
             allowNull:false,
