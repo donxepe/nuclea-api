@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const { putAlpha } = require('../controllers/alphaCont');
 
-const router = Router();
+const alphaRouter = Router();
 
-router.use('/alpha', putAlpha)
+alphaRouter.put('/', putAlpha)
 
 
-module.exports = router;
+module.exports = alphaRouter;
