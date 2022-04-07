@@ -6,11 +6,7 @@ const postAlpha = (req, res) => {
 
         const flatContent = Object.keys(content).reduce(
             (obj, key) => {
-                if (Array.isArray(content[key])) {
-                    obj[key] = content[key].join(',')
-                } else {
-                    obj[key] = content[key]
-                }
+                obj[key] = Array.isArray(content[key]) ? content[key].join(',') : content[key]
                 return obj
             },
             {}
@@ -19,7 +15,7 @@ const postAlpha = (req, res) => {
         res.json(flatContent)
 
     } catch(err) {
-        res.send(error);
+        res.send(err);
     }
 }
 
