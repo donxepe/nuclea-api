@@ -32,8 +32,10 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Declare relationships
 const { Quote, Author } = sequelize.models;
 
-Author.hasMany(Quote)
+Author.hasMany(Quote )
 Quote.belongsTo(Author)
+
+
 
 
 module.exports = {

@@ -1,11 +1,13 @@
 const { Router } = require('express');
-const { putAlpha } = require('../controllers/alphaCont');
-const { postAlpha } = require('../controllers/flattenCont');
+const alphaRouter = require('./alphaRoute');
+const flattenRouter = require('./flattenRoute');
+const quoteRouter = require('./quoteRoute');
 
 const router = Router();
 
-router.use('/alpha', putAlpha)
-router.use('/flatten', postAlpha)
+router.use('/alpha', alphaRouter)
+router.use('/flatten', flattenRouter)
+router.use('/quote', quoteRouter)
 
 
 module.exports = router;
