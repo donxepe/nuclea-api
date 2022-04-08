@@ -3,6 +3,6 @@ const { postAlpha } = require('../controllers/flattenCont');
 
 const flattenRouter = Router();
 
-flattenRouter.put('/', postAlpha)
+flattenRouter.post('/', postAlpha)
 
 module.exports = flattenRouter;

@@ -7,6 +7,7 @@ const postQuote = async (req, res) => {
         let randomQuote = await axios.get('http://programming-quotes-api.herokuapp.com/quotes/random')
         
 
+
         //const [ author, en , id ] = await randomQuote.data
         const quote = await JSON.stringify(randomQuote.data.en)
         const id = await randomQuote.data.id
@@ -37,7 +38,7 @@ const postQuote = async (req, res) => {
         res.json(resQuote)
 
     } catch (err) {
-        res.send(err)
+        res.status(500).send(err)
     }
 }
 

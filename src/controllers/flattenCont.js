@@ -3,6 +3,7 @@ const { Json } = require('../db')
 const postAlpha = (req, res) => {
     try {
         const content = req.body;
+        if(!Object.keys(content).length) throw 'no inputs'
 
         const flatContent = Object.keys(content).reduce(
             (obj, key) => {
@@ -15,7 +16,8 @@ const postAlpha = (req, res) => {
         res.json(flatContent)
 
     } catch(err) {
-        res.send(err);
+        if (err === 'no inputs') res.status(400).send(err)
+        else res.send(err);
     }
 }
 

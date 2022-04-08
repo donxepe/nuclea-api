@@ -4,6 +4,8 @@ const putAlpha = async(req, res) => {
     try {
         const content = req.body;
 
+        if(!Object.keys(content).length) throw 'no inputs'
+
         const [newJSON, nJ] = await Json.findOrCreate({
             where:{
                 content: JSON.stringify(content)
@@ -32,8 +34,8 @@ const putAlpha = async(req, res) => {
         res.json(sortedContent);
 
     } catch (error) {
-
-        res.send(error);
+        if (error === 'no inputs') res.status(400).send(error)
+        else res.send(error);
 
     }
 }
