@@ -6,9 +6,6 @@ const postQuote = async (req, res) => {
     try {
         let randomQuote = await axios.get('http://programming-quotes-api.herokuapp.com/quotes/random')
         
-
-
-        //const [ author, en , id ] = await randomQuote.data
         const quote = await JSON.stringify(randomQuote.data.en)
         const id = await randomQuote.data.id
         const author = await randomQuote.data.author
