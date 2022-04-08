@@ -127,13 +127,35 @@ Output
 
 - [x] Debe estar programado en Node ya sea js o ts. Debe contar las siguientes
 características:
-- [x]  Debe estar desarrollado en Express (https://expressjs.com/)
+- [x] Debe estar desarrollado en Express (https://expressjs.com/)
 - [x] Se conecte con una base de datos (puede ser un servicio de terceros)
 - [x] Debe implemente un logger
 - [x] Debe implemente al menos un middleware
 - [x] Debe manejar variables de entorno
-- [] Debe implementar al menos dos test unitarios por endpoint
+- [x] Debe implementar al menos dos test unitarios por endpoint
 - [x] Debe implementar manejo de errores
     - [x] Rutas que no existan (404)
     - [x] Si falla el api externa (500)
     - [x] Validar inputs (400)
+
+
+## Dependencias
+- node 16.14.0
+- PostgreSQL 13.4
+- npm 8.3.1
+
+## Instrucciones
+
+- Clonar este repo
+- Crear una base de datos de PostgreSQL (tomar nota del nombre) 
+- Crear un archivo '.env' en la raíz del repositorio con lo siguiente 
+```
+DB_USER=<usuario de postgres>
+DB_PASSWORD=<contraseña de usuario de postgres>
+DB_HOST="localhost"
+DB_NAME=<nombre de la base de datos creada en el paso anterior>
+```
+- Correr ```npm install``` en la raiz del repo
+- Para iniciar el servidor usar ```npm start```
+    - (usar algún cliente como https://insomnia.rest/ para hacer peticiones)
+- Para correr las pruebas usar ```npm test```
