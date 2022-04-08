@@ -4,7 +4,7 @@ const getQuotes = async (req,res) => {
     try {
 
         const quotes = await Author.findAll({ include: Quote, order: [
-            ['name','DESC'],
+            ['name','ASC'],
             [Quote, 'consultation_date', 'DESC']
         ]})
         const authors = quotes.reduce( (obj, aut)  => {
