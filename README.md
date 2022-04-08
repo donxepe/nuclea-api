@@ -134,6 +134,6 @@ características:
 - [x] Debe manejar variables de entorno
 - [] Debe implementar al menos dos test unitarios por endpoint
 - [] Debe implementar manejo de errores
-    - [] Rutas que no existan (404)
+    - [x] Rutas que no existan (404)
     - [] Si falla el api externa (500)
     - [] Validar inputs (400)
