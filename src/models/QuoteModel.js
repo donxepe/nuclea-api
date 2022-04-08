@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
         },
         consultation_date : {
             type: DataTypes.DATE,
-            get: function() { // or use get(){ }
+            get: function() { 
                 return this.getDataValue('consultation_date')
                   .toLocaleString('en-US', { 
                       month:'numeric',

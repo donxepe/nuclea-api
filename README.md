@@ -129,11 +129,11 @@ Output
 características:
 - [x]  Debe estar desarrollado en Express (https://expressjs.com/)
 - [x] Se conecte con una base de datos (puede ser un servicio de terceros)
-- [] Debe implemente un logger
+- [x] Debe implemente un logger
 - [x] Debe implemente al menos un middleware
 - [x] Debe manejar variables de entorno
 - [] Debe implementar al menos dos test unitarios por endpoint
-- [] Debe implementar manejo de errores
+- [x] Debe implementar manejo de errores
     - [x] Rutas que no existan (404)
-    - [] Si falla el api externa (500)
-    - [] Validar inputs (400)
+    - [x] Si falla el api externa (500)
+    - [x] Validar inputs (400)
