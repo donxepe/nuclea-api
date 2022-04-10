@@ -11,8 +11,8 @@ const agent = session(app)
         .catch((err) => {
           console.error('Unable to connect to the database:', err);
         }));
-        beforeEach(() => Quote.sync({ force: true }))
         beforeEach(() => Author.sync({ force: true}))
+        beforeEach(() => Quote.sync({ force: true }))
         describe('POST /quote', () => {
           it('should get 200', () =>
             agent.post('/quote').expect(200)
