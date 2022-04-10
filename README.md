@@ -1,6 +1,29 @@
 
 # Challenge
 
+## Dependencias
+- node 16.14.0
+- PostgreSQL 13.4
+- npm 8.3.1
+
+## Instrucciones
+
+- Clonar este repo
+- Crear una base de datos de PostgreSQL (tomar nota del nombre) 
+- Crear un archivo '.env' en la raíz del repositorio con lo siguiente: 
+```
+DB_USER=<usuario de postgres>
+DB_PASSWORD=<contraseña de usuario de postgres>
+DB_HOST="localhost"
+DB_NAME=<nombre de la base de datos creada en el paso anterior>
+```
+- Correr ```npm install``` en la raiz del repo
+- Para iniciar el servidor usar ```npm start```
+    - (usar algún cliente como https://insomnia.rest/ para hacer peticiones)
+- Para correr las pruebas usar ```npm test```
+
+## Enunciado:
+
 ## Parte 1
 
 La tarea 1 consiste en escribir un servicio simple que nos permita transformar un JSON. El servicio debe aceptar un JSON a través de HTTP PUT y HTTP POST, y ejecutar la acción
@@ -137,25 +160,3 @@ características:
     - [x] Rutas que no existan (404)
     - [x] Si falla el api externa (500)
     - [x] Validar inputs (400)
-
-
-## Dependencias
-- node 16.14.0
-- PostgreSQL 13.4
-- npm 8.3.1
-
-## Instrucciones
-
-- Clonar este repo
-- Crear una base de datos de PostgreSQL (tomar nota del nombre) 
-- Crear un archivo '.env' en la raíz del repositorio con lo siguiente 
-```
-DB_USER=<usuario de postgres>
-DB_PASSWORD=<contraseña de usuario de postgres>
-DB_HOST="localhost"
-DB_NAME=<nombre de la base de datos creada en el paso anterior>
-```
-- Correr ```npm install``` en la raiz del repo
-- Para iniciar el servidor usar ```npm start```
-    - (usar algún cliente como https://insomnia.rest/ para hacer peticiones)
-- Para correr las pruebas usar ```npm test```
